@@ -1,0 +1,26 @@
+import java.util.regex.*;
+public class Javaregex {
+
+
+
+    public static boolean Validpassword(String name)
+    {
+        String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$)[A-za-z0-9].{8,}$";
+
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(name);
+        return m.find();
+    }
+
+    public static void main(String[] args)
+        {
+
+            String str1 = "afawfnk";
+            System.out.println(Validpassword(str1));
+            String str2 = "vishalsal%askaR8";
+            System.out.println(Validpassword(str2));
+
+
+        }
+    }
+
